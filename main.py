@@ -82,6 +82,11 @@ api.add_resource(Users, "/api/users")
 api.add_resource(User, "/api/users/<int:user_id>")
 
 
+@app.route("/api/coffee")
+def coffee():
+	return "", 418
+
+
 @app.route("/")
 def hello():
 	return "<h1>Hello from python-flaskapi!</h1>"
