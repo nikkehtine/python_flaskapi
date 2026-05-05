@@ -3,9 +3,15 @@
 You will need [`uv`](https://docs.astral.sh/uv/) installed to be able to install dependencies and run the project.
 Additionally you can use [`just`](https://just.systems/man/en/) to run commands more easily.
 
+Next you need to setup the database by running `just setup_db` or `uv run python create_db.py`.
+
+Then you can run the app by running `just dev`, `uv run flask --app main run` (you can add `--debug` at the end)
+or `uv run python main.py` should also work.
+
 ## Commands
 
 - `just install` - install dependencies
+- `just setup_db` - setup the database
 - `just dev` - run the dev server
 - `just lint` - fix syntax issues
 - `just format` - format the code
@@ -55,8 +61,8 @@ curl -i -X PATCH http://localhost:5000/api/users/1 \
 curl -i -X DELETE http://localhost:5000/api/users/1
 ```
 
-
 ## Links
+
 - [Flask Quickstart](https://flask.palletsprojects.com/en/stable/quickstart/)
 - [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods)
 - [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status)
