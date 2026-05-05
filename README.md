@@ -44,7 +44,7 @@ curl -i -X POST http://localhost:5000/api/users \
 ### `PUT/PATCH`
 
 ```sh
-curl -i -X POST http://localhost:5000/api/users/1 \
+curl -i -X PATCH http://localhost:5000/api/users/1 \
   -H "Content-Type: application/json" \
   -d '{"name": "Alice", "email": "alice@email.com"}'
 ```
