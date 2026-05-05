@@ -1,14 +1,14 @@
-from flask import Blueprint
+from flask_restful import Resource
 
-from extensions import api
 from users import User, Users
 
-users_bp = Blueprint("users", __name__, url_prefix="/api")
 
-api.add_resource(Users, "/api/users")
-api.add_resource(User, "/api/users/<string:public_id>")
+class Coffee(Resource):
+	def get(self):
+		return "", 418
 
 
-@users_bp.route("/coffee")
-def coffee():
-	return "", 418
+def setup_api_routes(api):
+	api.add_resource(Users, "/api/users")
+	api.add_resource(User, "/api/users/<string:public_id>")
+	api.add_resource(Coffee, "/api/coffee")
