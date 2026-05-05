@@ -36,7 +36,7 @@ curl -i http://localhost:5000/api/users
 ```
 
 ```sh
-curl -i http://localhost:5000/api/users/2
+curl -i http://localhost:5000/api/users/{public_id}
 ```
 
 ### `POST`
@@ -44,21 +44,21 @@ curl -i http://localhost:5000/api/users/2
 ```sh
 curl -i -X POST http://localhost:5000/api/users \
   -H "Content-Type: application/json" \
-  -d '{"name": "Alice", "email": "alice@example.com"}'
+  -d '{"name": "Alice", "email": "alice@example.com", "password": "12345"}'
 ```
 
 ### `PUT/PATCH`
 
 ```sh
-curl -i -X PATCH http://localhost:5000/api/users/1 \
+curl -i -X PATCH http://localhost:5000/api/users/{public_id} \
   -H "Content-Type: application/json" \
-  -d '{"name": "Alice", "email": "alice@email.com"}'
+  -d '{"name": "Alice", "email": "alice@email.com", "password": "123456"}'
 ```
 
 ### `DELETE`
 
 ```sh
-curl -i -X DELETE http://localhost:5000/api/users/1
+curl -i -X DELETE http://localhost:5000/api/users/{public_id}
 ```
 
 ## Links
